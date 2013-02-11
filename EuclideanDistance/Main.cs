@@ -28,8 +28,12 @@ namespace EuclideanDistance
 
 			// Display both the closest and furthest data points from the focal point.
 			Console.WriteLine();
-			Console.WriteLine("Minimum distance: {0}", points.ElementAt(distances.IndexOf(distances.Min())).ToPoint());
-			Console.WriteLine("Maximum distance: {0}", points.ElementAt(distances.IndexOf(distances.Max())).ToPoint());
+			Console.WriteLine(
+				"Minimum distance: {0}", 
+				points.ElementAt(distances.IndexOf(distances.Min())).ToPoint());
+			Console.WriteLine(
+				"Maximum distance: {0}", 
+				points.ElementAt(distances.IndexOf(distances.Max())).ToPoint());
 		}
 
 		/// <summary>
