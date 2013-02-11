@@ -17,11 +17,32 @@ namespace EuclideanDistance
 		/// </param>
 		public static void Main(string[] args)
 		{
-			var points = new List<IEnumerable<double>>();
-			IEnumerable<double> input;
-
 			// Accumalate the intial data points needed before computation.
+			var points = InitialDataPoints();
+
+			// Retrieve the focal point to determine our distances.
+			var input = FocalPoint(points);
+
+			// Store all the distances.
+			var distances = points.Select(x => input.EuclideanDistance(x)).ToList();
+
+			// Display both the closest and furthest data points from the focal point.
+			Console.WriteLine();
+			Console.WriteLine("Minimum distance: {0}", points.ElementAt(distances.IndexOf(distances.Min())).ToPoint());
+			Console.WriteLine("Maximum distance: {0}", points.ElementAt(distances.IndexOf(distances.Max())).ToPoint());
+		}
+
+		/// <summary>
+		/// Initials the data points.
+		/// </summary>
+		/// <returns>
+		/// The data points.
+		/// </returns>
+		private static IEnumerable<IEnumerable<double>> InitialDataPoints()
+		{
+			var points = new List<IEnumerable<double>>();
 			Console.WriteLine("Please enter the initial points");
+
 			while (true)
 			{
 				Console.Write("Point [blank to stop]: ");
@@ -48,9 +69,23 @@ namespace EuclideanDistance
 				}
 			}
 
-			// Retrieve the focal point to determine our distances.
+			return points;
+		}
+
+		/// <summary>
+		/// Focals the point.
+		/// </summary>
+		/// <returns>
+		/// The point.
+		/// </returns>
+		/// <param name='points'>
+		/// Points.
+		/// </param>
+		private static IEnumerable<double> FocalPoint(IEnumerable<IEnumerable<double>> points)
+		{
 			Console.WriteLine();
 			Console.WriteLine("Please enter a focal point");
+
 			while (true)
 			{
 				Console.Write("Point: ");
@@ -66,22 +101,9 @@ namespace EuclideanDistance
 				}
 				else
 				{
-					input = p;
-					break;
+					return p;
 				}
 			}
-
-			// Store all the distances.
-			var distances = new List<double>();
-			foreach (var p in points)
-			{
-				distances.Add(input.EuclideanDistance(p));
-			}
-
-			// Display both the closest and furthest data points from the focal point.
-			Console.WriteLine();
-			Console.WriteLine("Minimum distance: {0}", points[distances.IndexOf(distances.Min())].ToPoint());
-			Console.WriteLine("Maximum distance: {0}", points[distances.IndexOf(distances.Max())].ToPoint());
 		}
 	}
 }
