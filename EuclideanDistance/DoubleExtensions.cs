@@ -49,7 +49,7 @@ namespace EuclideanDistance
 		/// <param name='point'>
 		/// Point.
 		/// </param>
-		public static string ToPoint(this IEnumerable<double> point)
+		public static string ToPoint<T>(this IEnumerable<T> point)
 		{
 			return string.Format("({0})", string.Join(",", point));
 		}
