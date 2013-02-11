@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuclideanDistance", "EuclideanDistance\EuclideanDistance.csproj", "{110100C8-2E96-45B3-BC9F-F7996D2783E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{110100C8-2E96-45B3-BC9F-F7996D2783E9}.Debug|x86.ActiveCfg = Debug|x86
+		{110100C8-2E96-45B3-BC9F-F7996D2783E9}.Debug|x86.Build.0 = Debug|x86
+		{110100C8-2E96-45B3-BC9F-F7996D2783E9}.Release|x86.ActiveCfg = Release|x86
+		{110100C8-2E96-45B3-BC9F-F7996D2783E9}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = EuclideanDistance\EuclideanDistance.csproj
+	EndGlobalSection
+EndGlobal
