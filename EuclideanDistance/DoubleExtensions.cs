@@ -33,7 +33,7 @@ namespace EuclideanDistance
 			var vectors = new List<double>();
 			for (int i = 0; i < pointA.Count(); i++)
 			{
-				vectors.Add(Math.Pow((pointA.ElementAt(i) + pointB.ElementAt(i)), 2));
+				vectors.Add(Math.Pow((pointA.ElementAt(i) - pointB.ElementAt(i)), 2));
 			}
 
 			// Return the sqare root of the sum of vectors.
